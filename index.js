@@ -42,6 +42,6 @@ const map = () => {
 
   }
   document.write('</table>');
-
-
 }
+
+move();
