@@ -1,7 +1,7 @@
 var headY = 2;
 var headX = 2;
-var height= 40;
-var width = 40;
+var height= 30;
+var width = 30;
 var update = 100;
 var increment = 2;
 
@@ -33,7 +33,7 @@ const map = () => {
     document.write('<tr>');
     for( var x = 0; x < width; x++){
       if( x === 0 || x === width - 1 || y === 0 || y === height -1){
-        document.write("<td class='wall' id= '"+ x + "-" + y + "'></td>");
+        document.write("<td class='borders' id= '"+ x + "-" + y + "'></td>");
       }else{
         document.write("<td class='arena' id= '"+ x + "-" + y + "'></td>");
       }
