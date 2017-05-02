@@ -81,15 +81,15 @@ const rand = (min,max) => {
     return Math.floor(Math.random()*(max-min)+min);
 }
 
-window.addEventListener("keypress", function key(){
+window.addEventListener("keydown", function key(){
   var key = event.keyCode;
-  if(dir != 0 && (key === 119 || key === 87))
+  if(key === 38)
     dir = 1;
-  else if(dir != 1 && (key === 115 || key === 83))
+  else if(key === 40)
     dir = 0;
-  else if(dir != 3 && (key === 97 || key === 65))
+  else if(key === 37)
     dir = 2;
-  else if( dir != 2 && (key === 100 || key === 68))
+  else if(key === 39)
     dir = 3;
 
   if(!moving)
@@ -125,6 +125,9 @@ const update = () => {
     length += increment;
   }
   document.getElementById('score').innerHTML = 'Score :' + score;
+  if(gameOver){
+  document.getElementById('score').innerHTML = 'GAME OVER';
+  }
 }
 
 const updTail = () => {
