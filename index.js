@@ -1,7 +1,7 @@
 var headY = 2;
 var headX = 2;
 var height = 30;
-var width = 30;
+var width = 40;
 var length = 0;
 var interval = 100;
 var increment = 2;
@@ -127,6 +127,7 @@ const update = () => {
   document.getElementById('score').innerHTML = 'Score :' + score;
   if(gameOver){
   document.getElementById('score').innerHTML = 'GAME OVER';
+  document.getElementById('playAgain').style.visibility = 'visible';
   }
 }
 

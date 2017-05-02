@@ -1,23 +1,22 @@
-
 body{
   background-color: black;
-
 }
 
 h1{
   font-size: 20px monospace;
   color:white;
+}
+
+.block{
   float:right;
-  padding-right:7em;
+  padding-right:4em;
+  margin-left: 20px;
   margin-top:300px;
 }
 
-
 .arena{
   background-color: transparent;
-
 }
-
 
 td{
   width:20px;
@@ -37,4 +36,18 @@ td{
 .food{
   background-color: lime;
   border-radius: 50%;
+}
+
+#playAgain{
+  margin-left: 50px;
+  background-color: crimson;
+  color:white;
+  overflow: visible;
+  border: 0;
+  cursor: pointer;
+  height: 70px;
+  width: 110px;
+  font-size:20px;
+  text-transform: uppercase;
+  border-radius: 3px;
 }
