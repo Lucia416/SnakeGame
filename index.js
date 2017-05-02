@@ -2,6 +2,7 @@ var headY = 2;
 var headX = 2;
 var height = 30;
 var width = 30;
+var length = 0;
 var interval = 100;
 var increment = 2;
 
@@ -13,6 +14,7 @@ var moving = false;
 var gameOver = false;
 var dir = 0 // down = 0, up = 1, left = 2, right = 3
 var int;
+var score = 0;
 
 const move = () => {
   init();
@@ -98,6 +100,7 @@ window.addEventListener("keypress", function key(){
 
 const update = () => {
   set( fX, fY, "food");
+  updTail();
   set(tailX[length], tailY[length], "arena");
   if (dir === 1)
     headY--;
@@ -108,6 +111,20 @@ const update = () => {
   else if (dir === 3)
     headX++;
   set(headX, headY, "snake");
+  for( var i = tailX.length-1; i >=0; i--){
+    if(headX === tailX[i] && headY === tailY[i]){
+      gameOver = true;
+      break;
+    }
+  }
+  if(headX === 0 || headX === width-1 || headY === 0 || headY === height-1)
+    gameOver = true;
+  else if (headX === fX && headY === fY){
+    score+=100;
+    food();
+    length += increment;
+  }
+  document.getElementById('score').innerHTML = 'Score :' + score;
 }
 
 const updTail = () => {
@@ -115,8 +132,8 @@ const updTail = () => {
     tailX[i] = tailX[i-1];
     tailY[i] = tailY[i-1];
   }
-  tailX[0] = headX;
-  tailY[0] = headY;
+    tailX[0] = headX;
+    tailY[0] = headY;
 
 }
 

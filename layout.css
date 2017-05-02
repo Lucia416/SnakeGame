@@ -4,6 +4,14 @@ body{
 
 }
 
+h1{
+  font-size: 20px monospace;
+  color:white;
+  float:right;
+  padding-right:10em;
+  margin-top:300px;
+}
+
 
 .arena{
   background-color: transparent;
