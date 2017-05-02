@@ -18,6 +18,7 @@ td{
 
 .snake{
   background-color: aqua;
+  border-radius: 5px 10px;
 }
 
 .borders{
@@ -27,4 +28,5 @@ td{
 
 .food{
   background-color: lime;
+  border-radius: 50%;
 }
